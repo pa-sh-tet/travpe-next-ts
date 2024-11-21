@@ -2,7 +2,7 @@ import React from "react";
 // import Post from "../Post/Post";
 // import { PostData, UserData } from "../../utils/types";
 
-function Home() {
+function Main() {
   //   {
   //   posts,
   //   currentUser,
@@ -55,28 +55,20 @@ function Home() {
   // );
 
   // const trendingTags: string[] = sortedHashtags.slice(0, 5);
-  const currentUser = {
-    avatar: "https://example.com/avatar.jpg",
-    name: "John Doe",
-    tag: "johndoe",
-    summary: "This is a summary about me",
-    followers: 100,
-    following: 50,
-    aboutMe: "I'm a traveler and a photographer",
-  };
+
   return (
     <section className="main">
       <div className="main__info-column">
         <div className="main__profile block-style">
           <div className="main__profile-face">
-            <div
+            {/* <div
               className="main__profile-avatar"
               style={{ backgroundImage: "url(" + currentUser.avatar + ")" }}
             ></div>
             <div className="main__profile-info">
               <h3 className="main__profile-name">{currentUser.name}</h3>
               <p className="main__profile-tag">@{currentUser.tag}</p>
-            </div>
+            </div> */}
           </div>
           <div className="main__profile-stats">
             <div className="main__profile-stats-item">
@@ -86,13 +78,13 @@ function Home() {
             </div>
             <div className="main__profile-stats-item">
               <p className="main__profile-stats-value">
-                {currentUser.followers}
+                {/* {currentUser.followers} */}
               </p>
               <p className="main__profile-stats-name">Followers</p>
             </div>
             <div className="main__profile-stats-item">
               <p className="main__profile-stats-value">
-                {currentUser.following}
+                {/* {currentUser.following} */}
               </p>
               <p className="main__profile-stats-name">Following</p>
             </div>
@@ -142,4 +134,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default Main;
