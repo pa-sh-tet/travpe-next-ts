@@ -1,22 +1,10 @@
-// import React from "react";
-// import Post from "../Post/Post";
-// import { PostData, UserData } from "../../utils/types";
-// import { useAuthContext } from "../components/AuthContext";
+// "use client";
 
-function Profile() {
-//   {
-//   userPosts,
-//   currentUser,
-//   onAddPost,
-//   onPostLike,
-//   onPostDelete
-// }: {
-//   userPosts: PostData[];
-//   currentUser: UserData;
-//   onAddPost: () => void;
-//   onPostLike: (post: PostData) => void;
-//   onPostDelete: (post: PostData) => void;
-// }
+import { authConfig } from "@/configs/auth";
+import { getServerSession } from "next-auth";
+
+// eslint-disable-next-line @next/next/no-async-client-component
+export default async function Profile() {
   const currentUser = {
     avatar: "https://example.com/avatar.jpg",
     name: "John Doe",
@@ -26,7 +14,7 @@ function Profile() {
     following: 50,
     aboutMe: "I'm a traveler and a photographer",
   };
-  // const { currentUser } = useAuthContext();
+  const session = await getServerSession(authConfig);
 
   return (
     <section className="profile-page">
@@ -38,7 +26,7 @@ function Profile() {
               style={{ backgroundImage: "url(" + currentUser.avatar + ")" }}
             ></div>
             <div className="profile__info">
-              <h2 className="profile__name">{currentUser.name}</h2>
+              <h2 className="profile__name">{session?.user?.name}</h2>
               <p className="profile__tag">@{currentUser.tag}</p>
               {/* <p className="profile__location">New York, USA</p> */}
               <p className="profile__summary">{currentUser.summary}</p>
@@ -127,5 +115,3 @@ function Profile() {
     </section>
   );
 }
-
-export default Profile;

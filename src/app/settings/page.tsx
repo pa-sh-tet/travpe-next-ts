@@ -1,9 +1,8 @@
 "use client";
 import React, { useState } from "react";
-// import { useAuthContext } from "../components/AuthContext";
+import { signOut } from "next-auth/react";
 
 function Settings() {
-  // { logOut }: { logOut: () => void }
   const [activeTab, setActiveTab] = useState(0);
 
   const handleTabClick = (index: number) => {
@@ -77,9 +76,13 @@ function Settings() {
                 </div>
                 <div className="settings__content-item">
                   <label className="settings__label">Logout fron system</label>
-                  {/* <button className="settings__logout-button" onClick={logOut}>
+                  <h3>Are you sure?</h3>
+                  <button
+                    className="settings__logout-button"
+                    onClick={() => signOut({ callbackUrl: "/" })}
+                  >
                     Logout
-                  </button> */}
+                  </button>
                 </div>
               </div>
             )}

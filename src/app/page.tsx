@@ -64,6 +64,7 @@ function Home() {
     following: 50,
     aboutMe: "I'm a traveler and a photographer",
   };
+
   return (
     <section className="main">
       <div className="main__info-column">
