@@ -4,6 +4,13 @@ export const users = [
     email: "2004pablo2004@gmail.com",
     name: "Pavel Altapov",
     password: "12345",
+
+    avatar: "https://example.com/avatar.jpg",
+    tag: "pavel-altapov",
+    summary: "This is a summary",
+    followers: 10,
+    following: 5,
+    aboutMe: "I'm a traveler and a basketball player",
     // role: "admin",
   },
   {

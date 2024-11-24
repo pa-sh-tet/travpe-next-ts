@@ -2,19 +2,22 @@
 
 import { authConfig } from "@/configs/auth";
 import { getServerSession } from "next-auth";
+import { UserData } from "../utils/types";
 
 // eslint-disable-next-line @next/next/no-async-client-component
 export default async function Profile() {
-  const currentUser = {
-    avatar: "https://example.com/avatar.jpg",
-    name: "John Doe",
-    tag: "johndoe",
-    summary: "This is a summary about me",
-    followers: 100,
-    following: 50,
-    aboutMe: "I'm a traveler and a photographer",
-  };
+  // const currentUser = {
+  //   avatar: "https://example.com/avatar.jpg",
+  //   name: "John Doe",
+  //   tag: "johndoe",
+  //   summary: "This is a summary about me",
+  //   followers: 100,
+  //   following: 50,
+  //   aboutMe: "I'm a traveler and a photographer",
+  // };
   const session = await getServerSession(authConfig);
+
+  const currentUser = session?.user as UserData;
 
   return (
     <section className="profile-page">
@@ -26,7 +29,7 @@ export default async function Profile() {
               style={{ backgroundImage: "url(" + currentUser.avatar + ")" }}
             ></div>
             <div className="profile__info">
-              <h2 className="profile__name">{session?.user?.name}</h2>
+              <h2 className="profile__name">{currentUser.name}</h2>
               <p className="profile__tag">@{currentUser.tag}</p>
               {/* <p className="profile__location">New York, USA</p> */}
               <p className="profile__summary">{currentUser.summary}</p>
