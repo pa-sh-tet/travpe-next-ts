@@ -26,7 +26,7 @@ export default async function Profile() {
           <div className="profile__face">
             <div
               className="profile__avatar"
-              style={{ backgroundImage: "url(" + currentUser.avatar + ")" }}
+              style={{ backgroundImage: "url(" + currentUser.image + ")" }}
             ></div>
             <div className="profile__info">
               <h2 className="profile__name">{currentUser.name}</h2>

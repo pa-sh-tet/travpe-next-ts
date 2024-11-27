@@ -8,6 +8,7 @@ export interface PostData {
 }
 
 export interface UserData {
+  image: string;
   name: string;
   email: string;
   password: string;

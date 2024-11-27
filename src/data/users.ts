@@ -1,3 +1,5 @@
+// import Image from "@/images/maybeLogo.png";
+
 export const users = [
   {
     id: "1",
@@ -5,7 +7,8 @@ export const users = [
     name: "Pavel Altapov",
     password: "12345",
 
-    avatar: "https://example.com/avatar.jpg",
+    image:
+      "https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=580&q=80",
     tag: "pavel-altapov",
     summary: "This is a summary",
     followers: 10,

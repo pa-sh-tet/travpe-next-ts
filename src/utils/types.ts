@@ -12,7 +12,7 @@ export interface UserData {
   email: string;
   password: string;
   summary: string;
-  avatar: string;
+  image: File | null | string;
   followers: number;
   following: number;
   aboutMe: string;
